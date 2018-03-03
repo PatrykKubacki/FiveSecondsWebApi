@@ -34,7 +34,7 @@ namespace FiveSecondsWebApi.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

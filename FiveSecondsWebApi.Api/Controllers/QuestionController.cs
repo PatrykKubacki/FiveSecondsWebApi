@@ -20,12 +20,11 @@ namespace FiveSecondsWebApi.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/randomQuestion")]
-        public IActionResult GetRandomQuestion()
+        public JsonResult GetRandomQuestion()
         {
             var question = _service.GetRandomQuestion();
 
-            return Ok(question);
+            return Json(question);
         }
     }
 }

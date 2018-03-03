@@ -23,8 +23,8 @@ namespace FiveSecondsWebApi.Infrastructure.Repositories
         public Questions GetRandomQuestion()
         {
             var questionsCount = Questions.Count();
-            var random = new Random(questionsCount);
-            var randomId = random.Next() + 1;
+            var random = new Random();
+            var randomId = random.Next(1, questionsCount);
 
             return Questions.FirstOrDefault(q => q.Id == randomId);
         }
