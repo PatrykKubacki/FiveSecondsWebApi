@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FiveSecondsWebApi.Infrastructure.Dto;
 using FiveSecondsWebApi.Infrastructure.Services.Abstract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiveSecondsWebApi.Api.Controllers
@@ -20,11 +16,17 @@ namespace FiveSecondsWebApi.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetRandomQuestion()
+        public string GetRandomQuestion()
         {
             var question = _service.GetRandomQuestion();
 
-            return Json(question);
+            return question.Question;
+        }
+
+        [HttpPost]
+        public void Add([FromBody]string question)
+        {
+            _service.AddQuestion(new QuestionsDTO { Question = question } );
         }
     }
 }

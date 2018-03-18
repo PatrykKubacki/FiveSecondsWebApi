@@ -2,7 +2,7 @@
 
 namespace FiveSecondsWebApi.Domain.Models
 {
-    public partial class FiveSecondsDataBaseContext : DbContext
+    public class FiveSecondsDataBaseContext : DbContext
     {
         public virtual DbSet<Questions> Questions { get; set; }
 
