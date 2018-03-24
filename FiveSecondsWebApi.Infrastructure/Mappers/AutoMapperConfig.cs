@@ -13,6 +13,7 @@ namespace FiveSecondsWebApi.Infrastructure.Mappers
             => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Questions, QuestionsDTO>();
+                cfg.CreateMap<QuestionsDTO, Questions>();
 
             }).CreateMapper();
     }
